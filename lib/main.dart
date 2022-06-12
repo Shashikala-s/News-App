@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:news_app/Dashboard.dart';
 import 'package:news_app/Signin.dart';
 import 'package:news_app/Welcome.dart';
 import 'package:provider/provider.dart';
@@ -28,7 +29,8 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme,
       title: 'News App',
 
-      home: Welcome(),
+      home: Dashboard(),
+      // home: Welcome(),
     );
   }
   );
