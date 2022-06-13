@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/DetailPage.dart';
+
 import 'package:news_app/Model/NewsModel.dart';
 import 'package:page_transition/page_transition.dart';
+
+import 'DetailPage.dart';
 
 class SliderCard extends StatelessWidget {
   final NewsModel newsModel;
@@ -53,6 +55,7 @@ class SliderCard extends StatelessWidget {
                       height: MediaQuery.of(context).size.height * 0.07,
                     ),
                     Text(newsModel.description,
+                        maxLines: 4,
                         style: Theme.of(context)
                             .textTheme
                             .caption

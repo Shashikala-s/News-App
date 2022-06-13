@@ -18,11 +18,12 @@ class MyTheme {
   static final lightTheme = ThemeData(
       scaffoldBackgroundColor: Colors.white,
       primaryColor: Colors.redAccent,
-      // buttonTheme: ButtonThemeData(buttonColor: Colors.grey[100]),
-      // iconTheme: IconThemeData(
-      //   color: Colors.grey[200],
-      // ),
+      iconTheme: const IconThemeData(
+        color: Colors.black,
+
+      ),
       backgroundColor: Colors.white,
+
       // cardColor: Colors.grey[100],
       // focusColor: const Color(0xFF541E6A),
       // textTheme: const TextTheme(

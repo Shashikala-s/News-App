@@ -1,7 +1,7 @@
 import 'dart:convert';
 
 import 'package:http/http.dart';
-import 'package:news_app/AppAPI.dart';
+import 'package:news_app/Services/AppAPI.dart';
 import 'package:news_app/Model/NewsModel.dart';
 
 String key = 'f60c311657c140839de3a3a75c20fbcc';
@@ -14,6 +14,7 @@ class AppServices {
     Map? dataResponse;
     // String url = AppAPI().news;
 
+    print(url);
     try {
       response = await get(
         Uri.parse(url),

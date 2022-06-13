@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:news_app/Dashboard.dart';
-import 'package:news_app/Signin.dart';
-import 'package:news_app/Welcome.dart';
+import 'package:news_app/Providers/AppProvider.dart';
+import 'package:news_app/UI/Dashboard.dart';
+import 'package:news_app/UI/Signin.dart';
+import 'package:news_app/UI/Welcome.dart';
 import 'package:provider/provider.dart';
 import 'package:provider/single_child_widget.dart';
 
@@ -12,8 +13,7 @@ void main() {
 }
 List<SingleChildWidget> providers = [
   ChangeNotifierProvider<ThemeProvider>(create: (_) => ThemeProvider()),
-  // ChangeNotifierProvider<CartProvider>(create: (_) => CartProvider()),
-  // ChangeNotifierProvider<ShoppingProvider>(create: (_) => ShoppingProvider()),
+  ChangeNotifierProvider<AppProvider>(create: (_) => AppProvider()),
 ];
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -29,8 +29,8 @@ class MyApp extends StatelessWidget {
       theme: MyTheme.lightTheme,
       title: 'News App',
 
-      home: Dashboard(),
-      // home: Welcome(),
+      // home: Dashboard(),
+      home: Welcome(),
     );
   }
   );

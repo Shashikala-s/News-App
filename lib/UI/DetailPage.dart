@@ -16,6 +16,7 @@ class _DetailPageState extends State<DetailPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         floatingActionButton: FloatingActionButton(
+          heroTag: null,
           onPressed: () {},
           child: const FaIcon(FontAwesomeIcons.heartPulse, color: Colors.white),
         ),
@@ -63,13 +64,15 @@ class _DetailPageState extends State<DetailPage> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.01,
                       ),
-                      Text(
-                        widget.newsModel.title,
-                        style: Theme.of(context)
-                            .textTheme
-                            .subtitle1
-                            ?.apply(color: Colors.black, fontWeightDelta: 3),
-                        textAlign: TextAlign.center,
+                      Expanded(
+                        child: Text(
+                          widget.newsModel.title,
+                          style: Theme.of(context)
+                              .textTheme
+                              .subtitle1
+                              ?.apply(color: Colors.black, fontWeightDelta: 3),
+                          textAlign: TextAlign.center,
+                        ),
                       ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.01,
@@ -91,6 +94,7 @@ class _DetailPageState extends State<DetailPage> {
                   child: Container(
                     child: FloatingActionButton(
                       elevation: 0,
+                      heroTag: null,
                       backgroundColor: Colors.grey[400],
                       mini: true,
                       onPressed: () {

@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:news_app/Signin.dart';
-import 'package:news_app/Signup.dart';
+import 'package:news_app/Providers/AppProvider.dart';
+import 'package:news_app/UI/Dashboard.dart';
+import 'package:news_app/UI/Signin.dart';
+import 'package:news_app/UI/Signup.dart';
 import 'package:page_transition/page_transition.dart';
+import 'package:provider/provider.dart';
 
 class Welcome extends StatefulWidget {
   const Welcome({Key? key}) : super(key: key);
@@ -12,6 +15,18 @@ class Welcome extends StatefulWidget {
 }
 
 class _WelcomeState extends State<Welcome> {
+  @override
+  void initState() {
+    if(Provider.of<AppProvider>(context, listen: false).login){
+      Navigator.push(
+          context,
+          PageTransition(
+              type: PageTransitionType.leftToRight,
+              child: const Dashboard()));
+    }
+
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -49,6 +64,7 @@ class _WelcomeState extends State<Welcome> {
                     heroTag: null,
                     elevation: 0,
                     onPressed: () {
+
                       Navigator.pushReplacement(
                           context,
                           PageTransition(
